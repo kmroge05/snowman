@@ -6,7 +6,10 @@ namespace Snowman
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            GamePlay newGame = new GamePlay();
+            newGame.StartGame();
+            newGame.Playing();
+            
         }
     }
 }
