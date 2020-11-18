@@ -15,6 +15,4 @@ namespace Snowman
         public string definition { get; set; }
         public string partOfSpeech { get; set; }
     }
-
-    
 }
