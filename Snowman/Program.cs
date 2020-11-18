@@ -37,6 +37,7 @@ namespace Snowman
             // Randomly selects phrase from WordsToGuess Class
             Random random = new Random();
             WordsToGuess thisWord = new WordsToGuess(random.Next(30));
+            Console.WriteLine(thisWord.GameWord);
 
             // Converts the current word into a charatcter array and adds each character to a List of type DisplayLetter
             char[] currentArray = thisWord.GameWord.ToCharArray();
@@ -47,7 +48,7 @@ namespace Snowman
                 DisplayLetter character = new DisplayLetter(letter);
                 secretLetters.Add(character);
             }
-            //Console.WriteLine(thisWord.GameWord);
+            
 
         }
 

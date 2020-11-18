@@ -9,7 +9,7 @@ namespace Snowman
         // Provides list of words for the game to pull from.
         public WordsToGuess(int wordPosition)
         {
-            string[] WordList = new string[]
+            List<string> WordList = new List<string>
             {
                 "MUTUAL",
                 "REGARD",
