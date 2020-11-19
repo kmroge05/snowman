@@ -6,29 +6,3 @@ Included Features
 1. A master loop for the game allowing you to choose if you want to keep playing once you win or lose. 
 2. Words used in the game are stored in a List, and retireieved at random to use for the game.
 3. Connects to a Dictionary API that will provide you with the definition of the word at the end of a game. 
-
-                    .-------.
-          *         | #     |    *
-                    |_______|         *
-                   _|=======|_             *
-       *          [___________]
-                   .'       `.   *   | /
-                  :   @   @   :     \|/_
-                  :     <     :     //
-         \~_s~-~s~s`._`...'_.'     //      *
-      *   `--~-~-~~s~/` ' '  `-.  //
-                /'/s/   _       `//
-               / /s/   (_)       /
-              ///s/     _        :  *
-        *    ///s/     (_)      .'          *
-            // |/`.           .'
-         __//    .-''-------'`-.
-          /|\  .'       _       `.      *
-         / | \:        (_)        :
-             :          _          :
-             :         (_)         :
-      *      :          _          :     *
-             :         (_)         :
-              :                   :
-               `.               .'
-                 `-._________.-'
