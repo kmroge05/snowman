@@ -5,7 +5,7 @@ using System.Text;
 namespace Snowman
 {
 
-
+    // Deserializes data from the WordsAPI dictionary API
     public class Dictionary
     {
         public string word { get; set; }
