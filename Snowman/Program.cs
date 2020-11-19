@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Text.Json;
+using Newtonsoft.Json;
+using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace Snowman
 {
@@ -70,24 +75,33 @@ namespace Snowman
                         currentGame = GamePlay.GameOver;
                     }
 
-                    // Asks if player wants to learn the definition of the word then calls WordAPI to display the definition.
-                    //Console.WriteLine("Want to learn the definition of this word?");
-                    //string Learn = Console.ReadLine().ToUpper();
-
-                    //do
-                    //{ 
-                    //    if (Learn == "Y")
-                    //    {
-                    //        Console.WriteLine("Cool, right?");
-                    //        break;
-                    //    }
-                    //    else 
-                    //    {
-                    //        break;
-                    //    }
-                    //} while (true);
-
                 } while (currentGame == GamePlay.Playing);
+
+                // Asks if player wants to learn the definition of the word then calls WordAPI to display the definition.
+                Console.WriteLine("Want to learn the definition of this word? (Y/N)");
+                ConsoleKeyInfo learnKey = Console.ReadKey();
+                string Learn = learnKey.Key.ToString();
+                Console.WriteLine();
+                Console.WriteLine();
+
+                do
+                {
+                    if (Learn.ToUpper() == "Y")
+                    {
+                        List<Definition> definition = GetDefinitions(thisWord.GameWord);
+                        
+                        foreach (var def in definition)
+                        {
+                            Console.WriteLine(string.Format("Definition: {0} \n Part of Speech: {1} \n\n", def.definition, def.partOfSpeech));
+                        }
+                        Console.WriteLine("Pretty cool, right? \n\n");
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                } while (true);
 
                 // Asks if player wants to play again
                 do
@@ -125,5 +139,21 @@ namespace Snowman
             Won,
             GameOver
         };
+
+        public static List<Definition> GetDefinitions(string word)
+        {
+            var results = new List<Definition>(); 
+            var webClient = new WebClient();
+            webClient.Headers.Add("x-rapidapi-key", "f0063a9c50mshe67bf3e784124c3p14f28ajsnd35df8e9ddb0");
+            byte[] definitions = webClient.DownloadData(string.Format("https://wordsapiv1.p.rapidapi.com/words/{0}/definitions", word));
+            var serializer = new JsonSerializer();
+            using (var stream = new MemoryStream(definitions))
+            using (var reader = new StreamReader(stream))
+            using (var jsonReader = new JsonTextReader(reader))
+            {
+                results = serializer.Deserialize<Dictionary>(jsonReader).definitions;
+            }
+            return results;
+        }
     }
 }
