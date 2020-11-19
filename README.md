@@ -4,5 +4,5 @@ Snowman is a variant of the game Hangman. Like Hangman, the player will be given
 
 Included Features
 1. A master loop for the game allowing you to choose if you want to keep playing once you win or lose. 
-2. Words used in the game are stored in a List, and retireieved at random to use for the game.
+2. Words used in the game are stored in a List, and retrieved at random to use for the game.
 3. Connects to a Dictionary API that will provide you with the definition of the word at the end of a game. 
