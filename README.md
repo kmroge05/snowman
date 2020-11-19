@@ -7,8 +7,8 @@ Included Features
 2. Words used in the game are stored in a List, and retireieved at random to use for the game.
 3. Connects to a Dictionary API that will provide you with the definition of the word at the end of a game. 
 
-
-               .-------.
+"
+                .-------.
       *         | #     |    *
                 |_______|         *
                _|=======|_             *
@@ -17,7 +17,7 @@ Included Features
               :   @   @   :     \|/_
               :     <     :     //
      \~_s~-~s~s`._`...'_.'     //      *
-  *   `--~-~-~~s~/`"""'  `-.  //
+  *   `--~-~-~~s~/` ' '  `-.  //
             /'/s/   _       `//
            / /s/   (_)       /
           ///s/     _        :  *
@@ -31,5 +31,6 @@ Included Features
   *      :          _          :     *
          :         (_)         :
           :                   :
-  ""'"""'""`.               .'"'"""'""'""
-             `-._       _.-'
+           `.               .'
+             `-._________.-' 
+"
